@@ -1,0 +1,49 @@
+Tree[s = 0, h = -1]:
+Tree is empty!
+Inserting key: bob
+Inserted: bob
+Tree[s = 1, h = 0]:
+bob
+TreeSet(['bob'])
+Inserting key: max
+Inserted: max
+Tree[s = 2, h = 1]:
+   max
+bob
+TreeSet(['bob', 'max'])
+Inserting key: clara
+Inserted: clara
+Tree[s = 3, h = 2]:
+   max
+      clara
+bob
+TreeSet(['bob', 'clara', 'max'])
+Inserting key: alice
+Inserted: alice
+Tree[s = 4, h = 2]:
+   max
+      clara
+bob
+   alice
+TreeSet(['alice', 'bob', 'clara', 'max'])
+Inserting key: tim
+Inserted: tim
+Tree[s = 5, h = 2]:
+      tim
+   max
+      clara
+bob
+   alice
+TreeSet(['alice', 'bob', 'clara', 'max', 'tim'])
+True
+False
+Deleting key: max
+Case 3!
+Case 1-2!
+Deleted key: max
+Tree[s = 4, h = 2]:
+   tim
+      clara
+bob
+   alice
+TreeSet(['alice', 'bob', 'clara', 'tim'])
