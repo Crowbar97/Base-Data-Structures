@@ -60,6 +60,8 @@ Inserted item: ('r', TrieNode<HashDict([]), False>) in bucket #4
 HashTable([])
 HashDict([])
 Inserted item: ('e', TrieNode<HashDict([]), False>) in bucket #1
+Preorder:
+h e l l o b c o w w o r l d w h e r e 
 Trie:
 TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieNode<HashDict([('l', TrieNode<HashDict([('o', TrieNode<HashDict([]), True>), ('b', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>), ('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([('o', TrieNode<HashDict([('r', TrieNode<HashDict([('l', TrieNode<HashDict([('d', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([]), True>)]), False>), ('h', TrieNode<HashDict([('e', TrieNode<HashDict([('r', TrieNode<HashDict([('e', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>)]), False>)]), False>
         e
@@ -167,6 +169,4 @@ TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieN
             e
                 r
                     e
-hello
-wow
-Trie(['hello', 'wow'])
+Trie(['hello', 'hellc', 'how', 'wow', 'where'])

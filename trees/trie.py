@@ -32,19 +32,15 @@ class Trie:
     def __repr__(self):
         return 'Trie(%s)' % list(self)
 
-    # FIXME: implement iterative traversal
-    def __yield_nodes(self, node, word, ret):
+    def __yield_words(self, node, prefix):
         if node.is_word:
-            ret[0] = word
-            yield
+            yield prefix
         for char in node.children:
-            yield self.__yield_nodes(node.children[char], word + char, ret).__next__()
-
+            for word in self.__yield_words(node.children[char], prefix + char):
+                yield word
+                
     def __iter__(self):
-        ret = [ None ]
-        for _ in self.__yield_nodes(self.root, '', ret):
-            print(ret[0])
-            yield ret[0]
+        return self.__yield_words(self.root, '')
 
     def preorder(self):
         print('Preorder:')
@@ -52,23 +48,21 @@ class Trie:
         print()
 
     def __preorder(self, node):
-        if node:
-            for char in node.children:
-                print(char, end=' ')
-                self.__preorder(node.children[char])
+        for char in node.children:
+            print(char, end=' ')
+            self.__preorder(node.children[char])
 
     # right-key-left traversal
-    def __rkl(self, node, link_lab, h):
-        if node:
-            num_ch = len(node.children)
+    def __rkl(self, node, link_label, h):
+        num_ch = len(node.children)
 
-            for char in list(node.children)[:num_ch // 2]:
-                self.__rkl(node.children[char], char, h + 1)
-            
-            print('%s%s' % (' ' * 4 * h, link_lab))
+        for char in list(node.children)[:num_ch // 2]:
+            self.__rkl(node.children[char], char, h + 1)
+        
+        print('%s%s' % (' ' * 4 * h, link_label))
 
-            for char in list(node.children)[num_ch // 2:]:
-                self.__rkl(node.children[char], char, h + 1)
+        for char in list(node.children)[num_ch // 2:]:
+            self.__rkl(node.children[char], char, h + 1)
 
     def print(self):
         print('Trie:')

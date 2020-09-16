@@ -3,7 +3,7 @@ from math import inf
 # Classic implementation with parent pointer
 # from Brian Faure and SSU course
 
-class Node:
+class BSTNode:
 
     def __init__(self, key=None, value=None):
         self.key = key
@@ -13,7 +13,7 @@ class Node:
         self.parent = None
 
     def __repr__(self):
-        return 'Node(%s, %s)' % (self.key, self.value)
+        return 'BSTNode(%s, %s)' % (self.key, self.value)
 
 class BST:
 
@@ -139,7 +139,7 @@ class BST:
             inserted = self.__insert(self.root, key, value)
         # else make root
         else:
-            self.root = Node(key, value)
+            self.root = BSTNode(key, value)
 
         if inserted:
             self.size += 1
@@ -153,7 +153,7 @@ class BST:
             # beforehand checking
             if node.left:
                 return self.__insert(node.left, key, value)
-            node.left = Node(key, value)
+            node.left = BSTNode(key, value)
             node.left.parent = node
             return True
 
@@ -161,7 +161,7 @@ class BST:
             # beforehand checking
             if node.right:
                 return self.__insert(node.right, key, value)
-            node.right = Node(key, value)
+            node.right = BSTNode(key, value)
             node.right.parent = node
             return True
 

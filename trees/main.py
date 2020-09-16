@@ -73,7 +73,7 @@ def test_trie():
     t.insert('wow')
     t.insert('where')
 
-    # t.preorder()
+    t.preorder()
     t.print()
 
     x = 'hello'
