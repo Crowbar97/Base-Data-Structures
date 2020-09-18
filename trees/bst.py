@@ -19,6 +19,7 @@ class BST:
 
     # TODO: levelorder (bfs)
     # TODO: visually divide methods in groups by '###'
+    # TODO: refactor with usage of python methods (interface)
 
     def __init__(self):
         self.root = None
@@ -33,13 +34,13 @@ class BST:
     def rkl(self, node, h):
         if node:
             self.rkl(node.right, h + 1)
-            print('%s%s' % ('   ' * h, node.key))
+            print('%s%s' % (' ' * 4 * h, node.key))
             self.rkl(node.left, h + 1)
 
     # key-right-left traversal
     def krl(self, node, h):
         if node:
-            print('%s%s' % ('   ' * h, node.key))
+            print('%s%s' % (' ' * 4 * h, node.key))
             self.krl(node.right, h + 1)
             self.krl(node.left, h + 1)
 
@@ -130,6 +131,7 @@ class BST:
 
         return left_res and right_res
 
+    # recursive version
     def insert(self, key, value=None):
         print('Inserting key: %s' % key)
 
@@ -192,6 +194,7 @@ class BST:
             return node
         return self.max(node.right)
 
+    # single-recursion-call version
     def delete(self, key):
         print('Deleting key: %s' % key)
 
@@ -245,6 +248,7 @@ class BST:
             # delete the inorder successor (that is extra for now)
             self.__delete(succ_node)
 
+    # next key by value
     def next(self, key):
         node = self.find(key)
 
@@ -265,6 +269,7 @@ class BST:
         print('Error: key %s is max, so it\'s no next key for it!' % key)
         return None
 
+    # prev key by value
     def prev(self, key):
         node = self.find(key)
 

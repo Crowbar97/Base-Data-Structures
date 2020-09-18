@@ -1,172 +1,24 @@
-HashTable([])
-HashDict([])
-Trie:
-TrieNode<HashDict([]), False>
-@
-HashTable([])
-HashDict([])
-Inserted item: ('h', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('e', TrieNode<HashDict([]), False>) in bucket #1
-HashTable([])
-HashDict([])
-Inserted item: ('l', TrieNode<HashDict([]), False>) in bucket #3
-HashTable([])
-HashDict([])
-Inserted item: ('l', TrieNode<HashDict([]), False>) in bucket #3
-HashTable([])
-HashDict([])
-Inserted item: ('o', TrieNode<HashDict([]), False>) in bucket #1
-HashTable([])
-HashDict([])
-Inserted item: ('b', TrieNode<HashDict([]), False>) in bucket #3
-HashTable([])
-HashDict([])
-Inserted item: ('c', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('w', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('o', TrieNode<HashDict([]), False>) in bucket #1
-HashTable([])
-HashDict([])
-Inserted item: ('r', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('l', TrieNode<HashDict([]), False>) in bucket #3
-HashTable([])
-HashDict([])
-Inserted item: ('d', TrieNode<HashDict([]), False>) in bucket #0
-HashTable([])
-HashDict([])
-Inserted item: ('o', TrieNode<HashDict([]), False>) in bucket #1
-HashTable([])
-HashDict([])
-Inserted item: ('w', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('w', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('h', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('e', TrieNode<HashDict([]), False>) in bucket #1
-HashTable([])
-HashDict([])
-Inserted item: ('r', TrieNode<HashDict([]), False>) in bucket #4
-HashTable([])
-HashDict([])
-Inserted item: ('e', TrieNode<HashDict([]), False>) in bucket #1
-Preorder:
-h e l l o b c o w w o r l d w h e r e 
-Trie:
-TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieNode<HashDict([('l', TrieNode<HashDict([('o', TrieNode<HashDict([]), True>), ('b', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>), ('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([('o', TrieNode<HashDict([('r', TrieNode<HashDict([('l', TrieNode<HashDict([('d', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([]), True>)]), False>), ('h', TrieNode<HashDict([('e', TrieNode<HashDict([('r', TrieNode<HashDict([('e', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>)]), False>)]), False>
-        e
-            l
-                    o
-                l
-                    b
-                    c
-    h
-        o
-            w
-@
-            r
-                l
-                    d
-        o
-            w
-    w
-        h
-            e
-                r
-                    e
-Contains "hello": True
-Contains "how": True
-Contains "hell": False
-Prefix "hell": True
-Prefix "wow": True
-Prefix "ho": True
-Prefix "hot": False
-Deleting: "world"
-Flag removed!
-Deleted item: HTItem(d, TrieNode<HashDict([]), False>)
-HashTable([])
-HashDict([])
-Removed: d
-Deleted item: HTItem(l, TrieNode<HashDict([]), False>)
-HashTable([])
-HashDict([])
-Removed: l
-Deleted item: HTItem(r, TrieNode<HashDict([]), False>)
-HashTable([('w', TrieNode<HashDict([]), True>)])
-HashDict([('w', TrieNode<HashDict([]), True>)])
-Removed: r
-Trie:
-TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieNode<HashDict([('l', TrieNode<HashDict([('o', TrieNode<HashDict([]), True>), ('b', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>), ('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>), ('h', TrieNode<HashDict([('e', TrieNode<HashDict([('r', TrieNode<HashDict([('e', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>)]), False>)]), False>
-        e
-            l
-                    o
-                l
-                    b
-                    c
-    h
-        o
-            w
-@
-        o
-            w
-    w
-        h
-            e
-                r
-                    e
-Deleting: "world"
-Error: no such seq!
-Trie:
-TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieNode<HashDict([('l', TrieNode<HashDict([('o', TrieNode<HashDict([]), True>), ('b', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>), ('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>), ('h', TrieNode<HashDict([('e', TrieNode<HashDict([('r', TrieNode<HashDict([('e', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>)]), False>)]), False>
-        e
-            l
-                    o
-                l
-                    b
-                    c
-    h
-        o
-            w
-@
-        o
-            w
-    w
-        h
-            e
-                r
-                    e
-Deleting: "hellb"
-Flag removed!
-Deleted item: HTItem(b, TrieNode<HashDict([]), False>)
-HashTable([('o', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)])
-HashDict([('o', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)])
-Removed: b
-Trie:
-TrieNode<HashDict([('h', TrieNode<HashDict([('e', TrieNode<HashDict([('l', TrieNode<HashDict([('l', TrieNode<HashDict([('o', TrieNode<HashDict([]), True>), ('c', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>), ('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>)]), False>), ('w', TrieNode<HashDict([('o', TrieNode<HashDict([('w', TrieNode<HashDict([]), True>)]), False>), ('h', TrieNode<HashDict([('e', TrieNode<HashDict([('r', TrieNode<HashDict([('e', TrieNode<HashDict([]), True>)]), False>)]), False>)]), False>)]), False>)]), False>
-        e
-            l
-                    o
-                l
-                    c
-    h
-        o
-            w
-@
-        o
-            w
-    w
-        h
-            e
-                r
-                    e
-Trie(['hello', 'hellc', 'how', 'wow', 'where'])
+Inserted root!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+KDTree[s = 9]:
+        0 | (4, 5)
+    1 | (3, 2)
+            1 | (5, 1)
+        0 | (3, 1)
+0 | (2, 3)
+            1 | (1, 5)
+        0 | (0, 8)
+    1 | (1, 1)
+        0 | (2, 0)
+Points inside [(2, 4), (2, 3)]:
+Node<(2, 3), None, 0>
+Node<(3, 2), None, 1>
+Points inside [(4, 8), (0, 2)]:
+Node<(5, 1), None, 1>

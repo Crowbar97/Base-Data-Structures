@@ -1,5 +1,6 @@
 from trees.bst import BST
 from trees.trie import Trie
+from trees.kdt import KDT, Bounds
 
 def test_bst():
     bst = BST()
@@ -97,6 +98,26 @@ def test_trie():
 
     print(t)
 
+def test_kdt():
+    kdt = KDT(dim=2)
+
+    kdt.insert((2, 3))
+    kdt.insert((3, 2))
+    kdt.insert((1, 1))
+    kdt.insert((0, 8))
+    kdt.insert((1, 5))
+    kdt.insert((3, 1))
+    kdt.insert((4, 5))
+    kdt.insert((2, 0))
+    kdt.insert((5, 1))
+
+    kdt.print()
+
+    kdt.rect_search([ Bounds(2, 4), Bounds(2, 3) ])
+
+    kdt.rect_search([ Bounds(4, 8), Bounds(0, 2) ])
+
 
 # test_bst()
-test_trie()
+# test_trie()
+test_kdt()
