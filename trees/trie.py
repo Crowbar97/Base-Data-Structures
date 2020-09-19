@@ -102,10 +102,6 @@ class Trie:
         return deleted
 
     def __delete(self, node, seq, ind):
-        if not node:
-            print('Error: no such seq!')
-            return False
-
         if ind == len(seq):
             if node.is_word:
                 node.is_word = False
@@ -115,6 +111,10 @@ class Trie:
             return False
         
         char = seq[ind]
+        if char not in node.children:
+            print('Error: no such seq!')
+            return False
+        
         no_children = self.__delete(node.children[char], seq, ind + 1)
 
         if no_children:

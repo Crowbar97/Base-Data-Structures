@@ -28,7 +28,11 @@ class HashDict:
         self.ht.insert(key, value)
 
     def __contains__(self, key):
-        return bool(self.ht[key])
+        try:
+            self.ht[key]
+            return True
+        except:
+            return False
 
     def __len__(self):
         return len(self.ht)

@@ -1,6 +1,6 @@
 from trees.bst import BST
 from trees.trie import Trie
-from trees.kdt import KDT, Bounds
+from trees.kdt import KDT, KDTNode
 
 def test_bst():
     bst = BST()
@@ -113,10 +113,84 @@ def test_kdt():
 
     kdt.print()
 
-    kdt.rect_search([ Bounds(2, 4), Bounds(2, 3) ])
+    print('Rect: %s' % kdt.find_rect([ (2, 4), (2, 3) ]))
+    print('Rect: %s' % kdt.find_rect([ (4, 8), (0, 2) ]))
+    print('Exact: %s' % kdt.find((3, 2)))
+    print('Exact: %s' % kdt.find((3, 4)))
+    print('Partial: %s' % kdt.find((3, None)))
+    print('Partial: %s' % kdt.find((None, 1)))
 
-    kdt.rect_search([ Bounds(4, 8), Bounds(0, 2) ])
+    kdt = KDT(dim=3)
+    kdt.insert((1, 1, 1))
+    kdt.insert((0, 1, 1))
+    kdt.insert((5, 5, 5))
+    kdt.insert((5, 2, 5))
+    kdt.insert((5, 8, 5))
+    kdt.insert((4, 8, 4))
+    kdt.insert((8, 8, 6))
+    kdt.insert((3, 8, 4))
+    kdt.insert((5, 8, 4))
+    kdt.insert((7, 8, 6))
+    kdt.insert((9, 8, 6))
+    kdt.insert((7, 9, 7))
+    kdt.insert((9, 9, 6))
 
+    kdt.print()
+    node = kdt.root.right.right
+    print('Min: %s' % kdt.find_min(node, node.axis))
+    print('Max: %s' % kdt.find_max(node, node.axis))
+
+    kdt.delete((5, 5, 5))
+
+    kdt = KDT(dim=3)
+    kdt.insert((10, 10, 10))
+    kdt.insert((0, 1, 1))
+    kdt.insert((15, 8, 12))
+    kdt.insert((17, 5, 4))
+    kdt.insert((11, 15, 5))
+    kdt.insert((16, 10, 3))
+    kdt.insert((14, 10, 14))
+    kdt.insert((14, 12, 4))
+    kdt.insert((20, 19, 2))
+    kdt.insert((12, 15, 18))
+    kdt.insert((15, 9, 8))
+    kdt.insert((15, 10, 4))
+    kdt.insert((12, 15, 1))
+    kdt.insert((13, 12, 6))
+    kdt.insert((12, 18, 6))
+
+    kdt.print()
+
+    kdt.delete((10, 10, 10))
+    kdt.is_valid()
+    kdt.delete((15, 8, 12))
+    kdt.is_valid()
+
+    print('Out of range value test:')
+    node = kdt.find((12, 15, 18))[0]
+    node_keys = node.keys
+    node.keys = (8, 15, 18)
+    kdt.print()
+    kdt.is_valid()
+    node.keys = node_keys
+
+    print('Duplicate key value test:')
+    node = kdt.find((14, 10, 14))[0]
+    new_node = KDTNode((15, 9, 8))
+    node.right = new_node
+    new_node.parent = node
+    new_node.axis = kdt.next_axis(node)
+    kdt.print()
+    kdt.is_valid()
+    node.right = None
+
+    print('Broken parent link test:')
+    node = kdt.find((12, 15, 18))[0]
+    node_parent = node.parent
+    node.parent = 'Fake'
+    kdt.print()
+    kdt.is_valid()
+    node.parent = node_parent
 
 # test_bst()
 # test_trie()

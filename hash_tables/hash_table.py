@@ -22,7 +22,7 @@ class HashTable:
         self.size = 0
         if tuples:
             self.extend(tuples)
-        print(self)
+        # print(self)
 
     def __repr__(self):
         return 'HashTable(%s)' % list(self)
@@ -53,7 +53,7 @@ class HashTable:
                 return
 
         dll.push_back(HTItem(key, value))
-        print('Inserted item: %s in bucket #%s' % ((key, value), ind))
+        # print('Inserted item: %s in bucket #%s' % ((key, value), ind))
         self.size += 1
 
     def delete(self, key):
@@ -81,7 +81,7 @@ class HashTable:
             if item.key == key:
                 return item.value
 
-        return None
+        raise Exception('No such key: "%s"' % key)
     
     # iter by tuples
     def __iter__(self):

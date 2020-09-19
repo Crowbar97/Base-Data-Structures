@@ -1,13 +1,15 @@
 from hash_tables.hash_table import HashTable
 
 class HashSet:
+
     def __init__(self, keys=None):
-        self.bst = HashTable()
+        self.ht = HashTable()
         if keys:
             self.extend(keys)
+        # print(self)
 
     def __repr__(self):
-        return 'HashSet(%s)' % list(map(lambda item: item[0], self.ht.get_items()))
+        return 'HashSet(%s)' % list(self)
 
     def extend(self, keys):
         for key in keys:
@@ -15,10 +17,22 @@ class HashSet:
 
     def add(self, key):
         self.ht.insert(key)
-        print(self)
+        # print(self)
 
-    def is_in(self, key):
-        return bool(self.ht.get(key))
+    def __contains__(self, key):
+        try:
+            self.ht[key]
+            return True
+        except:
+            return False
+
+    def __len__(self):
+        return len(self.ht)
+
+    # iter by keys
+    def __iter__(self):
+        for t in self.ht:
+            yield t[0]
 
     def pop(self, key):
         self.ht.delete(key)

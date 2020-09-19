@@ -43,6 +43,11 @@ def test_hd():
 
     hd.pop('max')
 
+    try:
+        print(hd['max'])
+    except Exception as e:
+        print(e)
+
 
 # test_td()
 test_hd()
