@@ -192,6 +192,27 @@ def test_kdt():
     kdt.is_valid()
     node.parent = node_parent
 
+    kdt = KDT(dim=3)
+    kdt.build_optimal([
+        (10, 10, 10),
+        (0, 1, 1),
+        (15, 8, 12),
+        (17, 5, 4),
+        (11, 15, 5),
+        (16, 10, 3),
+        (14, 10, 14),
+        (14, 12, 4),
+        (20, 19, 2),
+        (12, 15, 18),
+        (15, 9, 8),
+        (15, 10, 4),
+        (12, 15, 1),
+        (13, 12, 6),
+        (12, 18, 6),
+    ])
+    kdt.print()
+    kdt.is_valid()
+
 # test_bst()
 # test_trie()
 test_kdt()

@@ -2,10 +2,10 @@ from math import inf
 from copy import deepcopy
 
 from sets.hash_set import HashSet
+from trees.quickselect import quickselect_median as median
 
 # TODO:
-# build optimal tree
-# KNN
+# k-nearest neighbor search
 
 # TODO: replace error prints with exceptions?
 
@@ -327,3 +327,31 @@ class KDT:
         right_res = self.__is_valid(node.right, bounds_right, keys)
 
         return left_res and right_res
+
+    def build_optimal(self, nodes):
+        self.clear()
+        nodes = [ KDTNode(node) for node in nodes ]
+        self.root = self.__build_optimal(nodes, 0)
+
+    def median(self, nodes, axis):
+        less_fn = lambda n1, n2: self.get_order(n1, n2, axis) == self.LESS
+        return median(nodes, less_fn)
+
+    def __build_optimal(self, nodes, axis):
+        if not nodes:
+            return None
+
+        pivot = self.median(nodes, axis)
+        pivot.axis = axis
+
+        left_nodes = [ node for node in nodes if self.get_order(pivot, node) == self.LESS ]
+        right_nodes = [ node for node in nodes if self.get_order(pivot, node) == self.GREATER ]
+
+        pivot.left = self.__build_optimal(left_nodes, self.next_axis(pivot))
+        if pivot.left:
+            pivot.left.parent = pivot
+        pivot.right = self.__build_optimal(right_nodes, self.next_axis(pivot))
+        if pivot.right:
+            pivot.right.parent = pivot
+
+        return pivot
