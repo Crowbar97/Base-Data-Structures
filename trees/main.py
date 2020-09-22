@@ -1,6 +1,7 @@
 from trees.bst import BST
 from trees.trie import Trie
 from trees.kdt import KDT, KDTNode
+from trees.heap import Heap
 
 def test_bst():
     bst = BST()
@@ -213,6 +214,34 @@ def test_kdt():
     kdt.print()
     kdt.is_valid()
 
+def test_heap():
+    heap = Heap([2, 3, 1, 5, 4, 8 ,1, 9, 2])
+    print(heap)
+    heap.print()
+    print(heap.extract_max())
+    print(heap.extract_max())
+    print(heap.extract_max())
+    heap.print()
+
+    heap.build([5, 3, 1, 8, 2, 0, 23, -5, 88, 12, 6, 84, 45, 45])
+    heap.print()
+    heap.is_valid()
+
+    # Greater right validation test
+    value = heap.array[4]
+    heap.array[4] = 14
+    heap.print()
+    heap.is_valid()
+    heap.array[4] = value
+
+    x = 45
+    print('indices of "%s": %s' % (x, heap.find(x)))
+    x = 6
+    print('indices of "%s": %s' % (x, heap.find(x)))
+    x = 9
+    print('indices of "%s": %s' % (x, heap.find(x)))
+
 # test_bst()
 # test_trie()
-test_kdt()
+# test_kdt()
+test_heap()
