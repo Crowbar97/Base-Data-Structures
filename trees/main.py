@@ -215,7 +215,17 @@ def test_kdt():
     kdt.is_valid()
 
 def test_heap():
-    heap = Heap([2, 3, 1, 5, 4, 8 ,1, 9, 2])
+    heap = Heap([
+        (2, 'max'),
+        (3, 'jane'),
+        (1, 'bob'),
+        (5, 'jim'),
+        (4, 'jack'),
+        (8, 'sam'),
+        (1, 'ivan'),
+        (9, 'anna'),
+        (2, 'alex'),
+    ])
     print(heap)
     heap.print()
     print(heap.extract_max())
@@ -223,23 +233,45 @@ def test_heap():
     print(heap.extract_max())
     heap.print()
 
-    heap.build([5, 3, 1, 8, 2, 0, 23, -5, 88, 12, 6, 84, 45, 45])
+    heap.build([
+        (5, 'max'),
+        (3, 'jane'),
+        (1, 'bob'),
+        (8, 'jim'),
+        (2, 'jack'),
+        (0, 'sam'),
+        (23, 'ivan'),
+        (-5, 'anna'),
+        (88, 'alex'),
+        (12, 'benjamin'),
+        (6, 'kate'),
+        (84, 'august'),
+        (45, 'volga'),
+        (45, 'moscow'),
+    ])
     heap.print()
     heap.is_valid()
 
     # Greater right validation test
-    value = heap.array[4]
-    heap.array[4] = 14
+    key = heap.array[4].key
+    heap.array[4].key = 14
+    print('Modified heap:')
     heap.print()
     heap.is_valid()
-    heap.array[4] = value
+    heap.array[4].key = key
 
+    heap.print()
     x = 45
     print('indices of "%s": %s' % (x, heap.find(x)))
     x = 6
     print('indices of "%s": %s' % (x, heap.find(x)))
     x = 9
     print('indices of "%s": %s' % (x, heap.find(x)))
+
+    heap.delete(45)
+    heap.print()
+    heap.delete(12)
+    heap.print()
 
 # test_bst()
 # test_trie()

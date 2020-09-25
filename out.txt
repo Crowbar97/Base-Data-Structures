@@ -1,4 +1,4 @@
-Heap([9, 8, 5, 4, 3, 1, 1, 2, 2])
+Heap([(9, 'anna'), (8, 'sam'), (5, 'jim'), (4, 'jack'), (3, 'jane'), (1, 'bob'), (1, 'ivan'), (2, 'max'), (2, 'alex')])
 Heap[s = 9]:
         1
     5
@@ -9,9 +9,9 @@ Heap[s = 9]:
             2
         4
             2
-9
-8
-5
+(9, 'anna')
+(8, 'sam')
+(5, 'jim')
 Heap[s = 6]:
     2
         1
@@ -35,6 +35,7 @@ Heap[s = 14]:
         8
             -5
 Heap is valid!
+Modified heap:
 Heap[s = 14]:
         45
             23
@@ -50,7 +51,51 @@ Heap[s = 14]:
             3
         8
             -5
-Error: parent "12" (ind=1) < right "14" (ind=4)
+Error: parent "HeapItem(12, benjamin)" (ind=1) < right "HeapItem(14, kate)" (ind=4)
+Heap[s = 14]:
+        45
+            23
+    84
+            1
+        45
+            0
+88
+            5
+        6
+            2
+    12
+            3
+        8
+            -5
 indices of "45": [5, 6]
 indices of "6": [4]
 indices of "9": []
+Key to delete: "45"
+Heap[s = 13]:
+        45
+    84
+            1
+        23
+            0
+88
+            5
+        6
+            2
+    12
+            3
+        8
+            -5
+Key to delete: "12"
+Heap[s = 12]:
+        45
+    84
+        23
+            0
+88
+            5
+        6
+            2
+    8
+            1
+        3
+            -5
