@@ -5,6 +5,9 @@ import random
 def get_middle(l):
     return l[len(l) // 2]
 
+def quickselect_median_kdt(l, less_fn, pivot_fn=get_middle):
+    return quickselect(l, len(l) // 2, less_fn, pivot_fn)
+
 def quickselect_median(l, less_fn, pivot_fn=get_middle):
     if len(l) % 2 == 1:
         return quickselect(l, len(l) // 2, less_fn, pivot_fn)

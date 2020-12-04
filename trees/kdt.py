@@ -2,7 +2,7 @@ from math import inf
 from copy import deepcopy
 
 from sets.hash_set import HashSet
-from trees.quickselect import quickselect_median as median
+from trees.quickselect import quickselect_median_kdt as median
 
 # TODO: validate axis of each node
 

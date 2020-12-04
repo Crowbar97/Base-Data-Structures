@@ -210,6 +210,7 @@ def test_kdt():
         (12, 15, 1),
         (13, 12, 6),
         (12, 18, 6),
+        (12, 19, 26),
     ])
     kdt.print()
     kdt.is_valid()
@@ -275,5 +276,5 @@ def test_heap():
 
 # test_bst()
 # test_trie()
-# test_kdt()
-test_heap()
+test_kdt()
+# test_heap()

@@ -27,6 +27,8 @@ class DLL:
     def clear(self):
         self.__init__()
 
+    # TODO: don't use foreign structures
+    # like built-in arrays []
     def __repr__(self):
         nodes = []
         this_node = self.head

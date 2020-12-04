@@ -1,101 +1,223 @@
-Heap([(9, 'anna'), (8, 'sam'), (5, 'jim'), (4, 'jack'), (3, 'jane'), (1, 'bob'), (1, 'ivan'), (2, 'max'), (2, 'alex')])
-Heap[s = 9]:
-        1
-    5
-        1
-9
-        3
-    8
-            2
-        4
-            2
-(9, 'anna')
-(8, 'sam')
-(5, 'jim')
-Heap[s = 6]:
-    2
-        1
-4
-        1
-    3
-        2
-Heap[s = 14]:
-        45
-            23
-    84
-            1
-        45
-            0
-88
-            5
-        6
-            2
-    12
-            3
-        8
-            -5
-Heap is valid!
-Modified heap:
-Heap[s = 14]:
-        45
-            23
-    84
-            1
-        45
-            0
-88
-            5
-        14
-            2
-    12
-            3
-        8
-            -5
-Error: parent "HeapItem(12, benjamin)" (ind=1) < right "HeapItem(14, kate)" (ind=4)
-Heap[s = 14]:
-        45
-            23
-    84
-            1
-        45
-            0
-88
-            5
-        6
-            2
-    12
-            3
-        8
-            -5
-indices of "45": [5, 6]
-indices of "6": [4]
-indices of "9": []
-Key to delete: "45"
-Heap[s = 13]:
-        45
-    84
-            1
-        23
-            0
-88
-            5
-        6
-            2
-    12
-            3
-        8
-            -5
-Key to delete: "12"
-Heap[s = 12]:
-        45
-    84
-        23
-            0
-88
-            5
-        6
-            2
-    8
-            1
-        3
-            -5
+Inserted root!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+KDTree[s = 9]:
+                0 | (4, 5)
+        1 | (3, 2)
+                        1 | (5, 1)
+                0 | (3, 1)
+0 | (2, 3)
+                        1 | (1, 5)
+                0 | (0, 8)
+        1 | (1, 1)
+                0 | (2, 0)
+Rect: [Node<(2, 3), None, 0>, Node<(3, 2), None, 1>]
+Rect: [Node<(5, 1), None, 1>]
+Exact: [Node<(3, 2), None, 1>]
+Exact: []
+Partial: [Node<(3, 2), None, 1>, Node<(3, 1), None, 0>]
+Partial: [Node<(1, 1), None, 1>, Node<(3, 1), None, 0>, Node<(5, 1), None, 1>]
+Inserted root!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted right!
+Inserted right!
+KDTree[s = 13]:
+                                        2 | (9, 9, 6)
+                                1 | (9, 8, 6)
+                        0 | (8, 8, 6)
+                                        2 | (7, 9, 7)
+                                1 | (7, 8, 6)
+                2 | (5, 8, 5)
+                                1 | (5, 8, 4)
+                        0 | (4, 8, 4)
+                                1 | (3, 8, 4)
+        1 | (5, 5, 5)
+                2 | (5, 2, 5)
+0 | (1, 1, 1)
+        1 | (0, 1, 1)
+New min: Node<(4, 8, 4), None, 0>
+New min: Node<(3, 8, 4), None, 1>
+Min: Node<(3, 8, 4), None, 1>
+New max: Node<(8, 8, 6), None, 0>
+New max: Node<(9, 8, 6), None, 1>
+New max: Node<(9, 9, 6), None, 2>
+New max: Node<(7, 9, 7), None, 2>
+Max: Node<(7, 9, 7), None, 2>
+Keys to delete: (5, 5, 5)
+New min: Node<(4, 8, 4), None, 0>
+New min: Node<(3, 8, 4), None, 1>
+Node<(3, 8, 4), None, 1>
+Node<(5, 5, 5), None, 1> Node<(1, 1, 1), None, 0>
+KDTree[s = 12]:
+                                        2 | (9, 9, 6)
+                                1 | (9, 8, 6)
+                        0 | (8, 8, 6)
+                                        2 | (7, 9, 7)
+                                1 | (7, 8, 6)
+                2 | (5, 8, 5)
+                                1 | (5, 8, 4)
+                        0 | (4, 8, 4)
+        1 | (3, 8, 4)
+                2 | (5, 2, 5)
+0 | (1, 1, 1)
+        1 | (0, 1, 1)
+Inserted root!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+Inserted left!
+Inserted right!
+KDTree[s = 15]:
+                                1 | (15, 9, 8)
+                        0 | (14, 10, 14)
+                                        2 | (12, 18, 6)
+                                1 | (12, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (11, 15, 5)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 8, 12)
+                2 | (17, 5, 4)
+0 | (10, 10, 10)
+        1 | (0, 1, 1)
+Keys to delete: (10, 10, 10)
+New min: Node<(11, 15, 5), None, 2>
+New min: Node<(13, 12, 6), None, 2>
+New min: Node<(12, 18, 6), None, 2>
+Node<(12, 18, 6), None, 2>
+Node<(11, 15, 5), None, 2>
+KDTree[s = 14]:
+                                1 | (15, 9, 8)
+                        0 | (14, 10, 14)
+                                1 | (12, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (12, 18, 6)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 8, 12)
+                2 | (17, 5, 4)
+0 | (11, 15, 5)
+        1 | (0, 1, 1)
+KDT is valid!
+Keys to delete: (15, 8, 12)
+New min: Node<(16, 10, 3), None, 0>
+New min: Node<(15, 9, 8), None, 1>
+Node<(15, 9, 8), None, 1>
+Node<(15, 8, 12), None, 1> Node<(11, 15, 5), None, 0>
+KDTree[s = 13]:
+                        0 | (14, 10, 14)
+                                1 | (12, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (12, 18, 6)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 9, 8)
+                2 | (17, 5, 4)
+0 | (11, 15, 5)
+        1 | (0, 1, 1)
+KDT is valid!
+Out of range value test:
+KDTree[s = 13]:
+                        0 | (14, 10, 14)
+                                1 | (8, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (12, 18, 6)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 9, 8)
+                2 | (17, 5, 4)
+0 | (11, 15, 5)
+        1 | (0, 1, 1)
+Error: #0 component of Node<(8, 15, 18), None, 1> must be in [11, 14]
+KDT is NOT valid!
+Duplicate key value test:
+KDTree[s = 13]:
+                                1 | (15, 9, 8)
+                        0 | (14, 10, 14)
+                                1 | (12, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (12, 18, 6)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 9, 8)
+                2 | (17, 5, 4)
+0 | (11, 15, 5)
+        1 | (0, 1, 1)
+Error: keys of node Node<(15, 9, 8), None, 1> already exists!
+KDT is NOT valid!
+Broken parent link test:
+KDTree[s = 13]:
+                        0 | (14, 10, 14)
+                                1 | (12, 15, 18)
+                                        2 | (13, 12, 6)
+                2 | (12, 18, 6)
+                                1 | (20, 19, 2)
+                        0 | (16, 10, 3)
+                                        2 | (12, 15, 1)
+                                1 | (14, 12, 4)
+                                        2 | (15, 10, 4)
+        1 | (15, 9, 8)
+                2 | (17, 5, 4)
+0 | (11, 15, 5)
+        1 | (0, 1, 1)
+Error (broken parent link): Fake <- Node<(12, 15, 18), None, 1>
+KDT is NOT valid!
+Clearing...
+KDTree[s = 0]:
+Tree is empty!
+                                1 | (15, 10, 4)
+                        0 | (14, 10, 14)
+                2 | (14, 12, 4)
+                        0 | (20, 19, 2)
+        1 | (16, 10, 3)
+                        0 | (15, 8, 12)
+                2 | (15, 9, 8)
+                        0 | (17, 5, 4)
+0 | (13, 12, 6)
+                        0 | (12, 19, 26)
+                2 | (12, 15, 18)
+                        0 | (12, 18, 6)
+        1 | (11, 15, 5)
+                        0 | (10, 10, 10)
+                2 | (12, 15, 1)
+                        0 | (0, 1, 1)
+KDT is valid!
