@@ -192,7 +192,7 @@ class KDT:
 
         sb_right = deepcopy(search_bounds)
         # right subtree values is bounded by min
-        sb_left[node.axis].min = node.keys[node.axis]
+        sb_right[node.axis].min = node.keys[node.axis]
 
         if node.right and self.intersect(rect_bounds, sb_right):
             self.__find_rect(rect_bounds, node.right, sb_right, res)
