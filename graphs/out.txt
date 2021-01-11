@@ -4,7 +4,39 @@ Adj list:
 2 : {3: 50}
 4 : {3: 20, 5: 60}
 5 : {}
-3 : {5: 10, 1: 20}
+3 : {5: 10}
 6 : {}
-Error: cycle exists!
-[(6, 0)]
+DFS:
+1 2 3 5 4 
+BFS:
+1 2 4 5 3 
+Dijkstra:
+----------
+closest: 1 (0)
+dist [2]: 10
+update [2]: inf -> 10
+dist [4]: 30
+update [4]: inf -> 30
+dist [5]: 100
+update [5]: inf -> 100
+----------
+closest: 2 (10)
+dist [3]: 60
+update [3]: inf -> 60
+----------
+closest: 4 (30)
+dist [3]: 50
+update [3]: 60 -> 50
+dist [5]: 90
+update [5]: 100 -> 90
+----------
+closest: 3 (50)
+dist [5]: 60
+update [5]: 90 -> 60
+----------
+closest: 5 (60)
+Note: graph has unreachable vertices: {6}
+Dists: {1: 0, 2: 10, 4: 30, 5: 60, 3: 50, 6: inf}
+Prevs: {1: None, 2: 1, 4: 1, 5: 3, 3: 4, 6: None}
+Topological sort:
+[(1, 0), (6, 0), (2, 1), (4, 1), (3, 2), (5, 3)]

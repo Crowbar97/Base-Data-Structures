@@ -62,7 +62,7 @@ class Graph:
         '''Breadth-first search algorithm'''
 
         queue = [ start_vert ]
-        visited = [ start_vert ]
+        visited = set([ start_vert ])
         print('BFS:')
         while queue:
             # print(queue)
@@ -71,7 +71,7 @@ class Graph:
             for adj_vert in self.adj_list[vert]:
                 if adj_vert not in visited:
                     queue.append(adj_vert)
-                    visited.append(adj_vert)
+                    visited.add(adj_vert)
         print()
 
     def pop_closest(self, target_verts, dists):
@@ -88,6 +88,7 @@ class Graph:
     def dij(self, start_vert):
         '''Dijkstra algorithm'''
 
+        print('Dijkstra:')
         # initializing
         target_verts, dists, prevs = set(), {}, {}
         for vert in self.adj_list:
@@ -130,6 +131,7 @@ class Graph:
             (sorting with smallest-numbered available vertex first in level)
         '''
 
+        print('Topological sort:')
         # making deep copy of initial adj_list
         # for safe links removing
         adj_list = deepcopy(self.adj_list)
