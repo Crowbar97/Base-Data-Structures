@@ -116,6 +116,15 @@ class Graph:
                         prevs[adj_vert] = closest_vert
         print('Dists: %s' % dists)
         print('Prevs: %s' % prevs)
+        return dists, prevs
+
+    def restore_path(self, prevs, target_vert):
+        print('Restored path from vertex "%s":' % target_vert)
+        print(target_vert, end=' ')
+        while prevs[target_vert]:
+            target_vert = prevs[target_vert]
+            print(target_vert, end=' ')
+        print()
 
     def is_source(self, target_vert, adj_list):
         for vert in adj_list:
