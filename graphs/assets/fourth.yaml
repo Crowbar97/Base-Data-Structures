@@ -1,0 +1,22 @@
+# for top sort testing
+
+meta:
+    directed: true
+
+data:
+    3:
+        8: 1
+        10: 1
+    5:
+        11: 1
+    7:
+        8: 1
+        11: 1
+    8:
+        9: 1
+    11:
+        2: 1
+        9: 1
+        10: 1
+    
+
