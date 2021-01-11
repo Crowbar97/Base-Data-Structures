@@ -123,12 +123,6 @@ class Graph:
                     return False
         return True
 
-    def has_links(self, adj_list):
-        for _, adj_verts in adj_list.items():
-            if adj_verts:
-                return True
-        return False
-
     # NOTE: own implementation
     def top_sort(self):
         '''
@@ -162,6 +156,6 @@ class Graph:
             layer_ind += 1
         
         # result
-        if self.has_links(adj_list):
+        if adj_list:
             print('Error: cycle exists!')
         print(sorted_seq)
