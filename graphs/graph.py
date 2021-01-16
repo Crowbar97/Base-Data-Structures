@@ -106,6 +106,7 @@ class Graph:
                 break
             print('-' * 10)
             print('closest: %s (%s)' % (closest_vert, dist))
+            # relaxation (weight updating)
             for adj_vert, length in self.adj_list[closest_vert].items():
                 if adj_vert in target_verts:
                     new_dist = dists[closest_vert] + length
@@ -133,7 +134,7 @@ class Graph:
                     return False
         return True
 
-    # NOTE: own implementation
+    # NOTE: own implementation (far not optimal)
     def top_sort(self):
         '''
             Topological sort

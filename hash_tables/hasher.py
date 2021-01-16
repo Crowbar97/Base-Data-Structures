@@ -7,17 +7,17 @@ def is_seq(obj):
         return True
 
 # TODO: improve
-def hash_string(string, size=100):
+def hash_string(string, bound, seed):
     str_hash = 0
-    k = 123
-    for i, char in enumerate(string):
-        str_hash += ord(char) * k ** i
-    return str_hash % size
+    for i, char in enumerate(string, 1):
+        h = ord(char) * seed ** i
+        str_hash += h
+    return str_hash % bound
 
 # TODO: make right way
-def hash_obj(obj, size):
+def hash_obj(obj, bound, seed=123):
     if not isinstance(obj, str):
         if not is_seq(obj):
             obj = [ obj ]
         obj = ''.join(map(str, obj))
-    return hash_string(obj, size)
+    return hash_string(obj, bound, seed)

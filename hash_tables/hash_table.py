@@ -1,5 +1,5 @@
 from lists.dll import DLL
-from hash_tables.hasher import hash_obj
+from hash_tables.hasher import hash_obj as hash_fun
 
 # Own implementation inspired by PageKey Solutions
 
@@ -20,6 +20,7 @@ class HashTable:
     def __init__(self, tuples=None, num_buckets=5):
         self.buckets = [ DLL() for _ in range(num_buckets) ]
         self.size = 0
+        self.hash_fun = lambda obj: hash_fun(obj, bound=len(self.buckets))
         if tuples:
             self.extend(tuples)
         # print(self)
@@ -40,7 +41,7 @@ class HashTable:
         self.__init__(num_buckets=len(self.buckets))
 
     def get_hash(self, key):
-        return hash_obj(key, len(self.buckets))
+        return self.hash_fun(key)
 
     def insert(self, key, value=None):
         ind = self.get_hash(key)
